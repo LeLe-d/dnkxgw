@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电脑科学官网 | 为中华互联网崛起而努力</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            background: rgba(0,0,0,0.9);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        /* 内容区域 */
+        .main-content {
+            margin-top: 80px;
+            padding: 2rem 5%;
+            background: #0a0a0a;
+            min-height: 100vh;
+        }
+
+        /* 模块网格布局 */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        /* 卡片样式 */
+        .card {
+            background: #1a1a1a;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            color: #fff;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #00ff9d;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <a href="#" class="logo">电脑科学官网 | 为中华互联网崛起而努力</a>
+        <div class="nav-links">
+            <a href="#">首页</a>
+            <a href="https://space.bilibili.com/1768832152?spm_id_from=333.1007.0.0">官方B站</a>
+            <a href="https://Lele-d.github.io/dnkx">官方博客</a>
+            <a href="#">关于</a>
+            <a href="#">我们的团队</a>
+        </div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main class="main-content">
+        <div class="grid-container">
+
+
+
+            <article class="card">
+                <img src="C:\XXXX" 
+                     alt="自然景色" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">我们又来了!</h3>
+                    <p>电脑科学官网在这时来临，我们更换了UI,让我们一起加油，响亮的"为中华互联网崛起而努力。</p>
+                </div>
+            </article>
+			
+
+            <article class="card">
+                <img src="C:\XXXX" 
+                     alt="自然景色" class="card-img">
+                <div class="card-content">
+                <h3 class="card-title">
+                    <a href="https://Lele-d.github.io/dnkx" target="_blank">进入我们的博客↑</a>
+                </h3>
+                    <p>电脑科学官网在这时来临，我们创建了博客,让我们一起加油，响亮的"为中华互联网崛起而努力。</p>
+                </div>
+            </article>
+
+			
+        </div>
+    </main>
+</body>
+</html>
