@@ -5,164 +5,279 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>电脑科学官网 | 为中华互联网崛起而努力</title>
     <style>
+        /* 基础样式重置 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Microsoft YaHei', sans-serif;
+            font-family: 'Segoe UI', system-ui, sans-serif;
         }
 
-        /* 导航栏样式 */
-        .navbar {
-            background: rgba(0,0,0,0.9);
-            padding: 1rem 5%;
+        :root {
+            --primary-color: #2d3436;
+            --secondary-color: #0984e3;
+            --text-color: #2d3436;
+            --bg-color: #ffffff;
+            --border-color: #dfe6e9;
+        }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        .header {
+            background: var(--bg-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+        }
+
+        .nav-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 60px;
         }
 
         .logo {
-            color: #fff;
             font-size: 1.5rem;
-            text-decoration: none;
+            font-weight: 700;
+            color: var(--primary-color);
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 30px;
         }
 
         .nav-links a {
-            color: rgba(255,255,255,0.9);
+            color: var(--text-color);
             text-decoration: none;
             transition: color 0.3s;
         }
 
-        /* 内容区域 */
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* 主内容区 */
         .main-content {
-            margin-top: 80px;
-            padding: 2rem 5%;
-            background: #0a0a0a;
-            min-height: 100vh;
-        }
-
-        /* 模块网格布局 */
-        .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 2rem 0;
+            grid-template-columns: 3fr 1fr;
+            gap: 40px;
+            margin-top: 80px;
         }
 
-        /* 卡片样式 */
-        .card {
-            background: #1a1a1a;
-            border-radius: 12px;
-            overflow: hidden;
+        /* 文章列表 */
+        .article-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
 
-        .card:hover {
+        .article-card:hover {
             transform: translateY(-5px);
         }
 
-        .card-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
+        .article-meta {
+            display: flex;
+            gap: 15px;
+            color: #636e72;
+            margin: 15px 0;
         }
 
-        .card-content {
-            padding: 1.5rem;
+        /* 侧边栏 */
+        .sidebar {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .widget {
+            margin-bottom: 30px;
+        }
+
+        /* 页脚 */
+        .footer {
+            background: var(--primary-color);
             color: #fff;
-        }
-
-        .card-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: #00ff9d;
+            padding: 50px 0;
+            margin-top: 60px;
         }
 
         /* 响应式设计 */
         @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
             .nav-links {
-                display: none;
+                display: none; /* 移动端导航需要JS支持 */
             }
         }
     </style>
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar">
-        <a href="#" class="logo">电脑科学官网 | 为中华互联网崛起而努力 ---©2025电脑科学保留所有权力</a>
-        <div class="nav-links">
-            <a href="#">首页</a>
-            <a href="https://space.bilibili.com/1768832152?spm_id_from=333.1007.0.0">官方B站</a>
-            <a href="https://Lele-d.github.io/dnkx">官方博客</a>
-	    <a href="https://lele-d.github.io/dnkxtd/">我们的团队</a>
-	    <a href="https://lele-d.github.io/dnkxwdzz">官方文档</a>
-            <a href="https://Lele-d.github.io/dnkxgg">公告</a>
-	    <a href="#">关于</a>
-        </div>
-    </nav>
+	<header class="header">
+        <nav class="nav-bar container">
+			<div class="logo">电脑科学官网 | 为中华互联网崛起而努力</div>
+            <div class="nav-links">
+                <a href="#">首页</a>
+                <a href="https://Lele-d.github.io/dnkx" target="_blank">官方博客</a>
+                <a href="https://Lele-d.github.io/dnkxtd" target="_blank">我们的团队</a>
+                <a href="https://Lele-d.github.io/dnkxwdzz" target="_blank">文档</a>
+				<a href="https://space.bilibili.com/1768832152?spm_id_from=333.1007.0.0" target="_blank">官方B站</a>
+				<a href="https://Lele-d.github.io/dnkxgg" target="_blank">公告</a>
+				
 
-    <!-- 主内容区 -->
-    <main class="main-content">
-        <div class="grid-container">
-
-
-				 <article class="card">
-                <img src="https://github.com/user-attachments/assets/914ec562-61ad-4fe4-a787-3a6e64991d42" 
-                     alt="自然景色" class="card-img">
-                <div class="card-content">
-                <h3 class="card-title">
-                    <a href="https://lele-d.github.io/lele/post/2025.kali%20linux-pei-zhi-zhong-wen-jie-mian-jiao-cheng.html" target="_blank">2025.kali linux配置中文界面教程↑</a>
-                </h3>
+            </div>
+        </nav>
+    </header>
+	
+	
+	
+	<main class="container">
+        <div class="main-content">
+            <!-- 文章列表区 -->
+            <div class="articles">
+                
+				
+				
+				<article class="article-card">
+				    <img src="https://github.com/user-attachments/assets/914ec562-61ad-4fe4-a787-3a6e64991d42" width="500">
+                    <h2><a href="https://lele-d.github.io/lele/post/2025.kali%20linux-pei-zhi-zhong-wen-jie-mian-jiao-cheng.html" target="_blank">2025.kali linux配置中文界面教程↑</a></h2>
+                    <div class="article-meta">
+                        <span>📅 2025-3-16</span>
+                        <span>发布者：乐乐•CEO</span>
+                    </div>
                     <p>2025年，kali linux系统的变更导致一些老的方法无法配置中文界面，本次带来了kali linux系统2025年的中文界面配置教程。</p>
-                </div>
-            </article>
-
-		
-		 <article class="card">
-                <img src="https://github.com/user-attachments/assets/b8eb321e-108c-459b-8ae2-581584c8287c" 
-                     alt="自然景色" class="card-img">
-                <div class="card-content">
-                <h3 class="card-title">
-                    <a href="https://lele-d.github.io/lele/post/Windows7%202025-she-nian-zhuan-ban-zheng-shi-fa-bu.html" target="_blank">Windows7 2025蛇年专版正式发布↑</a>
-                </h3>
+                </article>
+				
+				
+				
+								<article class="article-card">
+				    <img src="https://github.com/user-attachments/assets/aec7abdb-8791-4d3c-a78b-99c822ec11ea" width="500">
+                    <h2><a href="https://lele-d.github.io/lele/post/%E3%80%90-le-le-dian-nao-ke-xue-%E3%80%91PyCharm-he-Python-an-zhuang-jiao-cheng.html" target="_blank">PyCharm和Python安装教程↑</a></h2>
+                    <div class="article-meta">
+                        <span>📅 2025-3-16</span>
+                        <span>发布者：乐乐•CEO</span>
+                    </div>
+                    <p>pycharm和python的安装教程，这门编程语言在21世纪初期大量的受欢迎。</p>
+                </article>
+				
+				
+				
+				
+		        <article class="article-card">
+				    <img src="https://github.com/user-attachments/assets/b8eb321e-108c-459b-8ae2-581584c8287c" width="500">
+                    <h2><a href="https://lele-d.github.io/lele/post/Windows7%202025-she-nian-zhuan-ban-zheng-shi-fa-bu.html" target="_blank">Windows7 2025蛇年专版正式发布↑</a></h2>
+                    <div class="article-meta">
+                        <span>📅 2025-3-16</span>
+                        <span>发布者：乐乐•CEO</span>
+                    </div>
                     <p>电脑科学旗下Windows定制发行版，内置Edge浏览器，微信，QQ，免序列号WPS 2019，Office 2016，搜狗输入法,内置系统工具。</p>
-                </div>
-            </article>
-		
-
-            <article class="card">
-                <img src="https://github.com/user-attachments/assets/0170770a-ea24-4642-9b34-341ed86eaa8f" 
-                     alt="自然景色" class="card-img">
-                <div class="card-content">
-                    <h3 class="card-title">我们又来了!</h3>
+                </article>
+				
+				
+				
+				
+				<article class="article-card">
+				    <img src="https://github.com/user-attachments/assets/0170770a-ea24-4642-9b34-341ed86eaa8f">
+                    <h2>我们又来了!</h2>
+                    <div class="article-meta">
+                        <span>📅 2025-3-16</span>
+                        <span>发布者：乐乐•CEO</span>
+                    </div>
                     <p>电脑科学官网在这时来临，我们更换了UI,让我们一起加油，响亮的"为中华互联网崛起而努力"。</p>
-                </div>
-            </article>
-			
+                </article>
 
-            <article class="card">
-                <img src="https://github.com/user-attachments/assets/0170770a-ea24-4642-9b34-341ed86eaa8f" 
-                     alt="自然景色" class="card-img">
-                <div class="card-content">
-                <h3 class="card-title">
-                    <a href="https://Lele-d.github.io/dnkx" target="_blank">进入我们的博客↑</a>
-                </h3>
+
+                <article class="article-card">
+				<img src="https://github.com/user-attachments/assets/0170770a-ea24-4642-9b34-341ed86eaa8f">
+                    <h2><a href="https://Lele-d.github.io/dnkx" target="_blank">进入我们的博客↑</a></h2>
+                    <div class="article-meta">
+                        <span>📅 2025-3-16</span>
+                        <span>发布者：乐乐•CEO</span>
+                    </div>
                     <p>电脑科学官网在这时来临，我们创建了博客,让我们一起加油，响亮的"为中华互联网崛起而努力"。</p>
-                </div>
-            </article>
+                </article>
+            
+            
 
-		
-			
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Document</title>
+                </head>
+                <body>
+                    <img src="https://github.com/user-attachments/assets/0170770a-ea24-4642-9b34-341ed86eaa8f">
+                    <br>
+                    <strong>电脑科学官网在2025年3月16日创建</strong>
+                </body>
+                </html>
+
+
+
+            </div>
+            <!-- 侧边栏 -->
+            <aside class="sidebar">
+                
+                <div class="widget">
+                    <h3>公告</h3>
+                    <ul>
+						<li><a href="https://lele-d.github.io/dnkx" target="_blank">官方博客</a></li>
+						<li><a href="https://lele-d.github.io/dnkxtd" target="_blank">我们的团队</a></li>
+						<li><a href="https://lele-d.github.io/dnkxwdzz" target="_blank">文档</a></li>
+						<li><a href="https://space.bilibili.com/1768832152?spm_id_from=333.1007.0.0" target="_blank">官方B站</a></li>
+						<li><a href="https://lele-d.github.io/dnkxgg" target="_blank">官方公告</a></li>
+                    </ul>
+                </div>
+
+
+
+                <div class="widget">
+                    <h3>传送门</h3>
+                    <ul>
+						<li><a href="https://ubuntu.com" target="_blank">ubuntu官网</a></li>
+						<li><a href="https://kali.org" target="_blank">kali linux官网</a></li>
+						<li><a href="https://cn.bing.com" target="_blank">bing搜索引擎</a></li>
+						<li><a href="https://ai.com/" target="_blank">DeepSeek官网</a></li>
+			                        <li><a href="https://dinosaur.game/zh/dinosaur-game" target="_blank">谷歌小恐龙游戏</a></li>
+                    </ul>
+                </div>
+
+
+
+
+
+            </aside>
         </div>
     </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 电脑科学保留所有权力 - © 2025 电脑科学安全中心保留所有权力 - 分享与成长的编程世界</p>
+        </div>
+			
+		
+		
+    </footer>
 </body>
 </html>
